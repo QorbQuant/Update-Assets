@@ -144,19 +144,19 @@ if json_data is not None and isinstance(json_data, list) and len(json_data) > 0:
     option_definitions = convert_json_to_backend_format_options(json_data)
     asset_definitions = convert_json_to_backend_format_asset(json_data)
 
-    with open('asset_definitions.json', 'w') as json_file:
+    with open('asset_definitions.go', 'w') as json_file:
         json_file.write('\n'.join(asset_definitions))
-        print("data has been written to asset_definitions JSON")
+        print("Data has been written to asset_definitions")
 
-    with open('option_definitions.json', 'w') as json_file:
+    with open('option_definitions.go', 'w') as json_file:
         json_file.write('\n'.join(option_definitions))
-        print("data has been written to option_definitions JSON")
+        print("Data has been written to option_definitions")
 
 else:
     print('Invalid or empty JSON data returned from the main function.')
 
 # Read the contents of the options_definitions.json file
-with open('option_definitions.json', 'r') as file:
+with open('option_definitions.go', 'r') as file:
     data = file.read()
 
 # Extract var names & put into txt file
@@ -173,10 +173,10 @@ var_names_with_commas = [var_name + "," for var_name in var_names]
 # Write the var names to a text file
 with open('variable_names.txt', 'w') as file:
     file.write('\n'.join(var_names_with_commas))
-    print("data has been written to variables_names.txt")
+    print("Data has been written to variables_names.txt")
 
 # Read the content of the JSON file as a string
-with open('option_definitions.json') as file:
+with open('option_definitions.go') as file:
     json_content = file.read()
 
 # Extract the data using regular expressions
